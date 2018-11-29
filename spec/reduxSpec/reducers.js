@@ -11,7 +11,7 @@ var fakeState = {
 describe('reducers', function() {
   describe('currentVideo', function() {
     it('should be a function that accepts a state and an action', function() {
-      expect(currentVideoReducer).to.be.a('function');
+      expect(currentVideoReducer).to.be.a('function'); 
       expect(currentVideoReducer.bind(this)).to.throw();
       expect(currentVideoReducer.bind(this, {
         videoList: [],
