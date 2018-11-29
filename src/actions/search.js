@@ -6,7 +6,7 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 var handleVideoSearch = (q) => {
     return dispatch => {
-      searchYouTube({q, maxResults:5, key: YOUTUBE_API_KEY},(data) => {
+      searchYouTube({query:q, maxResults:5, key: YOUTUBE_API_KEY},(data) => {
         dispatch(changeVideoList(data));
         dispatch(changeVideo(data[0]));
       })
@@ -15,3 +15,5 @@ var handleVideoSearch = (q) => {
 };
 
 export default handleVideoSearch;
+
+
