@@ -8,7 +8,6 @@ import changeVideo from '../actions/currentVideo.js';
 import changeVideoList from '../actions/videoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import store from '../store/store.js';
-import YTSearch from '../actions/search'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -50,10 +49,13 @@ export default class App extends React.Component {
         <Nav handleSearchInputChange={this.getYouTubeVideos.bind(this)}/>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayerContainer/>
+            <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoListContainer/>
+            <VideoList
+              handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
+              videos={this.state.videos}
+            />
           </div>
         </div>
       </div>
